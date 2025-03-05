@@ -4,6 +4,7 @@ function App() {
   return (
     <div className="App">
       <h1>Weather Application</h1>
+
       <footer>
         <p>
           This project was coded by Jamie Singleton and is{" "}
