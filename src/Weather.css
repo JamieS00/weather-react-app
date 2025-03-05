@@ -1,4 +1,5 @@
 .weather-container {
+  background-color: white;
   padding: 40px;
   margin: 30px auto; /*centers container*/
   max-width: 800px; /*makes container look skinny*/

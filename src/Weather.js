@@ -5,9 +5,9 @@ const Weather = () => {
   return (
     <div className="Weather">
       <div className="weather-container">
-        <form action="hanleSubmit" className="Weather-search-bar mb-4">
+        <form action="handleSubmit" className="weather-search-bar mb-4">
           <input type="search" placeholder="Enter a city..." />
-          <input type="submit" value="search" />
+          <input type="submit" value="Search" />
         </form>
         <hr />
         <h1>New York</h1>
