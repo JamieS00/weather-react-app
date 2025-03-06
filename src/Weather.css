@@ -1,8 +1,12 @@
-.weather-container {
+.Weather {
   background-color: white;
   padding: 40px;
   margin: 30px auto; /*centers container*/
   max-width: 800px; /*makes container look skinny*/
   border: 1px solid black;
   border-radius: 8px;
+}
+
+.Weather h1 {
+  color: #878787;
 }
