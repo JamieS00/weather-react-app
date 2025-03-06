@@ -27,13 +27,12 @@ const Weather = () => {
       </ul>
       <div className="row mt-3">
         <div className="col-6">
-          <div className="clearfix">
+          <div className="d-flex align-items-center">
             <img
               src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
               alt="cloudy"
-              className="float-start"
             />
-            <div className="float-start">
+            <div>
               <span className="temperature">6</span>
               <span className="unit">°C</span>
             </div>
