@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import DateFormat from "./DateFormat";
 import "./Weather.css";
+
 import axios from "axios";
 
 // *************GOALS******************
@@ -12,6 +14,7 @@ const Weather = (props) => {
   let [weatherData, setweatherData] = useState({ ready: false });
 
   const handleResponse = (response) => {
+    // console.log(response.data);
     setweatherData({
       ready: true,
       temperature: Math.round(response.data.temperature.current),
@@ -20,7 +23,7 @@ const Weather = (props) => {
       wind: Math.round(response.data.wind.speed),
       description: response.data.condition.description,
       icon: response.data.condition.icon_url,
-      date: "Wednesday 08:00 ",
+      date: new Date(response.data.time * 1000),
     });
   };
 
@@ -46,7 +49,9 @@ const Weather = (props) => {
         <hr />
         <h1 className="mb-1">{weatherData.city}</h1>
         <ul>
-          <li>{weatherData.date}</li>
+          <li>
+            <DateFormat date={weatherData.date} />
+          </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
         <div className="row mt-3">

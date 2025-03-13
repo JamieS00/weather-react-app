@@ -1,5 +1,6 @@
 import "./App.css";
 import Weather from "./Weather";
+import DateFormat from "./DateFormat";
 import "./Weather";
 
 function App() {
