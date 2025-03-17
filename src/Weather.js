@@ -13,6 +13,7 @@ import axios from "axios";
 
 const Weather = (props) => {
   let [weatherData, setweatherData] = useState({ ready: false });
+  let [city, setCity] = useState(props.defaultCity); //weather comp
 
   const handleResponse = (response) => {
     // console.log(response.data);
@@ -28,17 +29,37 @@ const Weather = (props) => {
     });
   };
 
+  const search = () => {
+    let APIkey = "4ddbb61eb5o419b8d734a63d7f1t0b56";
+    let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${APIkey}&units=metric`;
+    axios.get(url).then(handleResponse);
+  };
+
+  //2.Runs when search btn is click
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // alert(city);
+    search();
+  };
+
+  //1.track user input
+  const updateCity = (event) => {
+    // console.log(event.target.value);
+    setCity(event.target.value);
+  };
+
   //When its true display
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <input
               type="search"
               placeholder="Enter a city..."
               className="form-control"
               autoFocus="on"
+              onChange={updateCity}
             />
             <input
               type="submit"
@@ -52,11 +73,7 @@ const Weather = (props) => {
       </div>
     );
   } else {
-    let APIkey = "4ddbb61eb5o419b8d734a63d7f1t0b56";
-
-    let url = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${APIkey}&units=metric`;
-    axios.get(url).then(handleResponse);
-
+    search();
     return "Loading...";
   }
 };
