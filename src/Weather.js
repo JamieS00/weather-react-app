@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import DateFormat from "./DateFormat";
 import "./Weather.css";
+
+import WeatherInfo from "./WeatherInfo";
 
 import axios from "axios";
 
@@ -47,32 +48,7 @@ const Weather = (props) => {
           </div>
         </form>
         <hr />
-        <h1 className="mb-1">{weatherData.city}</h1>
-        <ul>
-          <li>
-            <DateFormat date={weatherData.date} />
-          </li>
-          <li className="text-capitalize">{weatherData.description}</li>
-        </ul>
-        <div className="row mt-3">
-          <div className="col-6">
-            <div className="d-flex align-items-center">
-              <img src={weatherData.icon} alt={weatherData.description} />
-              <div>
-                <span className="temperature">{weatherData.temperature}</span>
-                <span className="unit">°C</span>
-              </div>
-            </div>
-          </div>
-          <div className="col-6">
-            <ul>
-              {/* <li>Precipitation: 15%</li> */}
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {weatherData.wind} km/h%</li>
-            </ul>
-          </div>
-          <hr />
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
