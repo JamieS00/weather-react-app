@@ -1,5 +1,6 @@
 import React from "react";
 import DateFormat from "./DateFormat";
+import WeatherTemp from "./WeatherTemp";
 
 const WeatherInfo = (props) => {
   return (
@@ -16,8 +17,7 @@ const WeatherInfo = (props) => {
           <div className="d-flex align-items-center">
             <img src={props.data.icon} alt={props.data.description} />
             <div>
-              <span className="temperature">{props.data.temperature}</span>
-              <span className="unit">°C</span>
+              <WeatherTemp celsius={props.data.temperature} />
             </div>
           </div>
         </div>
