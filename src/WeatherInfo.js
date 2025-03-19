@@ -28,7 +28,6 @@ const WeatherInfo = (props) => {
             <li>Wind: {props.data.wind} km/h%</li>
           </ul>
         </div>
-        <hr />
       </div>
     </div>
   );

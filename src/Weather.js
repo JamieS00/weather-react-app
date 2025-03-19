@@ -53,22 +53,17 @@ const Weather = (props) => {
     return (
       <div className="Weather">
         <form onSubmit={handleSubmit}>
-          <div className="row">
+          <div className="d-flex">
             <input
               type="search"
               placeholder="Enter a city..."
-              className="form-control"
+              className="form-control  me-4"
               autoFocus="on"
               onChange={updateCity}
             />
-            <input
-              type="submit"
-              value="Search"
-              className="btn btn-primary w-100"
-            />
+            <input type="submit" value="Search" className="btn btn-primary" />
           </div>
         </form>
-        <hr />
         <WeatherInfo data={weatherData} />
       </div>
     );
