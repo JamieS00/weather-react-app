@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Weather.css";
+import WeatherForecast from "./WeatherForecast";
 
 import WeatherInfo from "./WeatherInfo";
 
@@ -65,6 +66,8 @@ const Weather = (props) => {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
+        <hr />
+        <WeatherForecast data={weatherData} />
       </div>
     );
   } else {
