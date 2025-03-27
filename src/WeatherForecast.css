@@ -1,10 +1,10 @@
-.Forecast-day {
+.WeatherForecast {
   text-align: center;
 }
 
-p {
+/* p {
   text-align: center;
-}
+} */
 
 .Forecast-min {
   opacity: 0.6;

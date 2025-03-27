@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import WeatherForecast from "./WeatherForecast";
-
 import WeatherInfo from "./WeatherInfo";
-
 import axios from "axios";
 
 // *************GOALS******************
@@ -27,6 +25,7 @@ const Weather = (props) => {
       description: response.data.condition.description,
       icon: response.data.condition.icon_url,
       date: new Date(response.data.time * 1000),
+      coordinates: response.data.coordinates, //forecast component
     });
   };
 
@@ -67,7 +66,10 @@ const Weather = (props) => {
         </form>
         <WeatherInfo data={weatherData} />
         <hr />
-        <WeatherForecast data={weatherData} />
+        <WeatherForecast
+          data={weatherData}
+          coordinates={weatherData.coordinates}
+        />
       </div>
     );
   } else {
