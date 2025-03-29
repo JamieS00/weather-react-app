@@ -19,9 +19,15 @@ const WeatherForecast = (props) => {
     return (
       <div className="WeatherForecast">
         <div className="row">
-          <div className="col">
-            <WeatherForecastDay data={forecast[0]} />
-          </div>
+          {forecast.map((item, index) => {
+            if (index > 0) {
+              return (
+                <div className="col-2" key={index}>
+                  <WeatherForecastDay data={item} />
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     );

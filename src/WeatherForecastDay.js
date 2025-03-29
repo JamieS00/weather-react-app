@@ -11,7 +11,6 @@ const WeatherForecastDay = (props) => {
   };
   return (
     <div className="WeatherForecastDay">
-      <p> DAY COMPONENT </p>
       <div className="Forecast-day">{day()}</div>
       <div className="Weather-icon">
         <img src={props.data.condition.icon_url} alt="weather icon" />
