@@ -2,7 +2,6 @@ import React from "react";
 
 const WeatherForecastDay = (props) => {
   //props = props from forecast component
-
   const day = () => {
     let date = new Date(props.data.time * 1000);
     let day = date.getDay();

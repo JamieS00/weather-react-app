@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import DateFormat from "./DateFormat";
 import "./WeatherForecast.css";
 import WeatherForecastDay from "./WeatherForecastDay";
@@ -7,6 +7,11 @@ import axios from "axios";
 const WeatherForecast = (props) => {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setForecast] = useState(null);
+
+  //when the coordinates change then set loaded to false
+  useEffect(() => {
+    setLoaded(false); //call api
+  }, [props.coordinates]);
 
   const handleResponse = (response) => {
     setForecast(response.data.daily);
